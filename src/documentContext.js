@@ -202,6 +202,7 @@ DocumentContext.prototype.moveToNextPage = function (pageOrientation) {
 		var pageSize = getPageSize(this.getCurrentPage(), pageOrientation);
 		this.addPage(pageSize);
 		this.pageSnapshot().availableWidth = pageSize.width - this.x - this.pageMargins.right;
+		/*#FRK-15-02-2017-switch orientation in nested tables*/this.availableWidth = pageSize.width - this.x - this.pageMargins.right;
 	} else {
 		this.page = nextPageIndex;
 		this.initializePage();
